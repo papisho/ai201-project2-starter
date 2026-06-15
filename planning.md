@@ -155,17 +155,45 @@ graph TD
     end
 
 ## AI Tool Plan
+<!--
+### Tool 1 — search_listings
 
-<!-- For each part of the implementation below, describe:
-     - **Tool Selection: I will use Claude/Gemini to write the individual function bodies.
-     -**Inputs Given: I'll provide the exact docstrings and specifications from `tools.py` alongside the listing data structures from `listings.json`.
-     - **Expected Output: clean functions for `search_listings` and `compare_price`, plus targeted LLM prompts for `suggest_outfit` and `create_fit_card`.
-     - **Verification Strategy: I will run isolated test cases locally
+- **Tool Selection:** Gemni/Copilot for implementation
+- **Inputs Given:** Tool 1 specification (inputs, outputs, failure mode) from "search_listings" section + listings.json structure and example queries
+- **Expected Output:** Keyword relevance scoring function + size/price filtering logic with sorted list return
+- **Verification Strategy:** Test with the example query "vintage graphic tee under $30" from "A Complete Interaction" section; verify lst_006 ranks highest
 
+### Tool 2 — suggest_outfit
 
-**Milestone 3 — Individual tool implementations:**
+- **Tool Selection:** Claude/Copilot to design the Groq LLM prompt
+- **Inputs Given:** Tool 2 specification + wardrobe_schema.json format + example wardrobe from "A Complete Interaction" (jeans, sneakers) + item metadata structure
+- **Expected Output:** Groq prompt that pairs new item with existing wardrobe pieces; fallback prompt for empty wardrobes with style tag–based recommendations
+- **Verification Strategy:** Test with example item and wardrobe; verify outfit pairs jeans + sneakers explicitly
 
-**Milestone 4 — Planning loop and state management:**
+### Tool 3 — create_fit_card
+
+- **Tool Selection:** Claude/Copilot to design the Groq LLM prompt
+- **Inputs Given:** Tool 3 specification + outfit_suggestion string + item metadata (name, price, platform) + style tags for tone control
+- **Expected Output:** Groq prompt that generates 2–4 sentence OOTD-style captions; error fallback for missing inputs
+- **Verification Strategy:** Test with outfit from Tool 2; verify caption mentions price and platform naturally; test empty input fallback
+
+### Tool 4 — compare_price
+
+- **Tool Selection:** Claude/Copilot for implementation
+- **Inputs Given:** Tool 4 specification + listings.json structure + category grouping logic
+- **Expected Output:** Dictionary with `average_price`, `deal_rating`, and `message` keys; graceful "Fair Value" fallback for empty categories
+- **Verification Strategy:** Test with example "tops" category; verify average price calculation and deal_rating classification (e.g., "Great Deal", "Fair Value")
+
+### Planning Loop — agent.py
+
+- **Inputs Given:** Planning Loop section describing waterfall execution (parse → search → appraisal → generation) + state management structure + error handling rules
+- **Expected Output:** `run_agent()` function implementing deterministic loop with validation gates; proper session state initialization and tool sequencing
+- **Verification Strategy:** Test with "A Complete Interaction" example; trace session state through all 5 steps
+
+-->
+
+**Milestone 3 - Individual tool Implementations:**
+**Milestone 4 - Planning loop and state management **
 
 ---
 
