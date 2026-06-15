@@ -144,7 +144,13 @@ The spec was useful as a design guide, but a few implementation choices were sim
 
 ## Demo And Evidence
 
-The recorded interaction demo is saved at [data/demo2.gif](data/demo2.gif). The milestone 5 triggered-failure capture is already saved in the repo at [data/milestone5_failure_check.png](data/milestone5_failure_check.png).
+The recorded interaction demo is shown below.
+
+![FitFindr demo](data/demo2.gif)
+
+The milestone 5 triggered-failure capture is shown below.
+
+![Milestone 5 failure check](data/milestone5_failure_check.png)
 
 The failure screenshot shows:
 
